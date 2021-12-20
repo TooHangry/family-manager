@@ -1,0 +1,107 @@
+<div class="container flex-center">
+    <div class="tasks">
+        <div class="header">
+            Tasks
+        </div>
+        <div class="nav">
+            <div class="options">
+                <div class="option radio radio-selected">Board</div>
+                <div class="option radio">Timeline</div>
+                <div class="option radio">Timeline</div>
+            </div>
+            <div class="actions">
+                <div class="button-long" (click)="openAddTaskModal()">New Task</div>
+            </div>
+        </div>
+
+        <div class="subnav">
+           <div class="previous"><</div>
+           <div class="current">DATE</div>
+           <div class="next">></div>
+        </div>
+
+        <div class="tasklist flex-center">
+            <div class="taskboard card">
+
+                <div class="column">
+                    <div class="column-header">
+                        Snoozed
+                    </div>
+
+                    <div class="tasks">
+                        <div class="task outset-card" *ngFor="let task of getSnoozedTasks()">
+                            <div class="right outset-card flex-center" (click)="advance(task)">Next</div>
+                            <p>
+                                {{task.title}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="column-header">
+                        To Do
+                    </div>
+
+                    <div class="tasks">
+                        <div class="task outset-card" *ngFor="let task of getToDoTasks()">
+                            <div class="left outset-card flex-center" (click)="deAdvance(task)">Prev</div>
+                            <div class="right outset-card flex-center" (click)="advance(task)">Next</div>
+                            <p>
+                                {{task.title}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="column-header">
+                        In Progress
+                    </div>
+                    <div class="tasks">
+                        <div class="task outset-card" *ngFor="let task of getInProgressTasks()">
+                            <div class="left outset-card flex-center" (click)="deAdvance(task)">Prev</div>
+                            <div class="right outset-card flex-center" (click)="advance(task)">Next</div>
+                            <p>
+                                {{task.title}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="column-header">
+                        Resolved
+                    </div>
+                    <div class="tasks">
+                        <div class="task outset-card" *ngFor="let task of getResolvedTasks()">
+                            <div class="left outset-card flex-center" (click)="deAdvance(task)">Prev</div>
+                            <div class="right outset-card flex-center" (click)="advance(task)">Next</div>
+                            <p> 
+                                {{task.title}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="column-header">
+                        Completed
+                    </div>
+                    <div class="tasks">
+                        <div class="task outset-card" *ngFor="let task of getCompletedTasks()" >
+
+                            <div class="left outset-card flex-center" (click)="deAdvance(task)">Prev</div>
+                            <p>
+                                {{task.title}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-new-task-modal class="modal" id="new-task-modal" (closeModal)="closeAddTaskModal()"></app-new-task-modal>

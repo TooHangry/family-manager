@@ -1,0 +1,10 @@
+<div class="root" 
+[ngClass]="{'partitioned' : (showNavBar | async), 'full-content' : !(showNavBar | async),
+'dark' : (isDarkmode | async), 'light' : !(isDarkmode | async)}">
+  <div class="sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

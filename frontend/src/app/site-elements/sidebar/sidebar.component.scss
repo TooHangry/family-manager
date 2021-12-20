@@ -1,0 +1,114 @@
+.collapsed {
+    width: 0;
+    height: 0;
+}
+
+.expanded {
+    width: 64px;
+    height: 100%;
+}
+
+.sidebar {
+    height: 100%;
+    margin: 0;
+    transition: all 0.2s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    overflow-y: auto;
+
+    .container {
+        transition: all 0.1s ease;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 16px;
+    }
+
+    .nav-item {
+        cursor: pointer;
+        transition: all 0.1s ease;
+        transition-delay: 0.2s;
+
+        width: calc(100% - 16px) !important;
+        margin-left: 8px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .banner {
+            width: 48px;
+            height: 48px;
+            transition: all 0.1s ease;
+            transition-delay: 0.1s;
+
+            svg {
+                transition: all 0.1s ease;
+                transition-delay: 0.1s;
+                width: 48px;
+                height: 48px;
+            }
+            .alert {
+                transform: scale(0);
+                width: 0;
+            }
+        }
+
+        .nav-label {
+            transition: all 0.1s ease;
+            transition-delay: 0.1s;
+            transform: scale(0);
+            width: 0;
+        }
+    }
+
+    &:hover {
+        border-radius: 0 18px 18px 0;
+        width: 300px;
+        .nav-item {
+            height: 80px;
+            margin-bottom: 16px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+            .banner {
+                width: calc(100% - 20px);
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                svg {
+                    width: 32px;
+                    height: 32px;
+                }
+
+                .alert {
+                    width: calc(100% - 48px);
+                    transform: scale(1);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                }
+            }
+            .nav-label {
+                width: calc(100% - 24px);
+                transform: scale(1);
+                display: flex;
+                justify-content: flex-start;
+            }
+
+            &:hover {
+                height: 80px;
+                transform: scale(1.01);
+            }
+        }
+    }
+}

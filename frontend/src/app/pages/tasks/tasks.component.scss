@@ -1,0 +1,163 @@
+.container {
+    width: 100%;
+    max-height: 100%;
+    height: 100%;
+
+    .tasklist {
+        width: 100%;
+        height: calc(100% - 64px);
+        max-height: calc(100% - 64px);
+        overflow: auto;
+    }
+
+    .tasks {
+        width: calc(100% - 64px);
+        height: calc(100% - 64px);
+        max-height: calc(100% - 64px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        .header {
+            width: 100%;
+            font-size: 24px;
+        }
+
+        .subnav {
+            align-self: flex-start;
+            margin-top: 16px;
+            width: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .nav {
+            margin-top: 16px;
+            width: 100%;
+            height: 64px;
+            display: flex;
+            justify-content: space-between;
+
+            .options {
+                height: 64px;
+                width: calc(100% + 32px);
+                display: flex;
+                margin-left: -16px;
+
+                .option {
+                    margin: 16px;
+                }
+            }
+
+            .actions {
+                margin-right: -16px;
+                .button-long {
+                    margin: 16px;
+                }
+            }
+        }
+
+        .taskboard {
+            max-height: calc(100% - 16px);
+            height: calc(100% - 16px);
+            margin-top: 16px;
+            width: 100%;
+            padding: 0;
+            display: flex;
+            overflow: auto;
+            .column {
+                min-width: 300px;
+                width: 20%;
+                min-height: calc(100% - 32px);
+                max-height: calc(100% - 32px);
+                margin: 16px;
+
+                .column-header {
+                    font-size: 22px;
+                    padding: 8px 8px 8px 0;
+                    font-weight: bold;
+                }
+
+                .tasks {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    .task {
+                        width: 100%;
+                        min-height: 250px;
+                        max-height: 250px;
+                        height: 250px;
+                        display: block;
+                        position: relative;
+
+                        p {
+                            all: unset;
+                            position: absolute;
+                            top: 16px;
+                            left: 16px;
+                            font-weight: bold;
+                        }
+
+                        .left {
+                            position: absolute;
+                            top: 16px;
+                            left: 16px;
+                            height: calc(100% - 48px);
+                            width: 64px;
+                            border-radius: 6px;
+                            transition: all 0.2s ease;
+                            opacity: 0;
+                            cursor: pointer;
+                            user-select: none;
+                            &:hover {
+                               opacity: 0.8 !important;
+                            }
+                        }
+
+                        .right {
+                            position: absolute;
+                            top: 16px;
+                            right: 16px;
+                            height: calc(100% - 48px);
+                            width: 64px;
+                            border-radius: 6px;
+                            transition: all 0.2s ease;
+                            opacity: 0;
+                            cursor: pointer;
+                            user-select: none;
+                            &:hover {
+                               opacity: 0.8 !important;
+                            }
+                        }
+
+                        
+
+                        &:hover {
+                            .right, .left {
+                                opacity: 0.25;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.modal {
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    .back {
+        opacity: 1 !important;
+    }
+}

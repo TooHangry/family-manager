@@ -1,0 +1,46 @@
+<div class="container flex-center">
+    <div class="inset-card">
+        <h1 class="header">
+            Settings
+        </h1>
+
+        <div class="body">
+
+            <div class="body-header flex-center">
+                <div class="profile-image">
+
+                </div>
+
+                <input type="text" class="user-name" value="Robert Connolly" placeholder="Your Name" />
+            </div>
+
+            <div class="body-body">
+                <div class="toggle">
+                    <label>
+                        Appearance
+                    </label>
+                    <div class="input">
+                        <div class="radio" [ngClass]="{'radio-selected': isDark}" (click)="toggleDarkMode()">
+                            Dark
+                        </div>
+
+                        <div class="radio" [ngClass]="{'radio-selected': !isDark}" (click)="toggleDarkMode()">
+                            Light
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <div class="button">
+                Cancel
+            </div>
+            <div class="button">
+                Save
+            </div>
+        </div>
+    </div>
+</div>

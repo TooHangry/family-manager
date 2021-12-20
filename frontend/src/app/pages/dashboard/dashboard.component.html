@@ -1,0 +1,38 @@
+<div class="container flex-center">
+    <div class="null-state" *ngIf="!(families | async) || !(user | async)">
+        You are not currently associated with a family!
+        <a href="/code">Enter a Family Code</a> or 
+        <a href="/register">register a New Family</a> to proceed.
+    </div>
+
+
+    <div class="container dashboard" *ngIf="(families | async) && (user | async)">
+        <div class="header">
+            Hello, {{getName()}}!
+        </div>
+        <div class="info">
+            <div class="stats">
+                <div class="card">
+                    <div class="header">
+                        Lists
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="header">
+                        Lists
+                    </div>
+                </div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+        </div>
+    </div>
+</div>

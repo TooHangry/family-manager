@@ -1,0 +1,61 @@
+<div class="container flex-center">
+    <div class="back" (click)="clickCloseModal()">
+
+    </div>
+    <div class="inset-card">
+        <h1 class="header">
+            New Task
+        </h1>
+
+        <div class="body">
+            <div class="body-body">
+                <div class="toggle">
+                    <label>
+                        Title
+                    </label>
+                    <input type="text" placeholder="Task Title Here"/>
+
+                </div>
+
+                <div class="toggle">
+                    <label>
+                        Description
+                    </label>
+                    <textarea name="description" placeholder="Write a description of the task here (up to 250 words)"></textarea>
+                </div>
+
+                <div class="toggle">
+                    <label>
+                        Assigned User
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    <label>
+                        Sprint
+                    </label>
+                </div>
+
+                <div class="toggle">
+                    <label>
+                        Parent Task (optional)
+                    </label>
+                    <p>
+                        No parent task implies this task is a parent.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <div class="button" (click)="clickCloseModal()">
+                Cancel
+            </div>
+            <div class="button">
+                Save
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,314 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./variables.scss";
+
+@font-face {
+    font-family: NotoSanse;
+    src: url("./assets/fonts/NotoSansTC-Regular.otf") format("opentype");
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.light {
+    background-color: $background-light;
+    color: $text-color-light;
+    .root {
+        background-color: $background-light;
+    }
+    .sidebar {
+        background-color: $sidebar-color-light;
+        &:hover {
+            .alert {
+                background-color: $alert-light;
+            }
+            .nav-item {
+                transition-delay: 0.3s;
+                background-color: $outset-card-light;
+
+                &:hover {
+                    transition: all 0.2s ease-in-out;
+                    background-color: $accent-color-light;
+                }
+            }
+        }
+    }
+    svg {
+        stroke: $text-color-light;
+    }
+    .content {
+        background-color: $background-light;
+        color: $text-color-light;
+    }
+
+    .inset-card {
+        background-color: $inset-card-background-light;
+        border: 1px solid $inset-card-border-light;
+    }
+
+    .card {
+        background-color: $inset-card-background-light;
+        border: 1px solid $inset-card-border-light;
+    }
+
+    .outset-card {
+        background-color: $background-light;
+        border: 1px solid $inset-card-border-light;
+    }
+
+    input {
+        background-color: $outset-card-light;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &:focus {
+            background-color: $inset-card-border-light;
+        }
+    }
+
+    textarea {
+        background-color: $outset-card-light;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &:focus {
+            background-color: $inset-card-border-light;
+        }
+    }
+
+    .button {
+        background-color: $accent-color-light;
+    }
+
+    .button-long {
+        background-color: $accent-color-dark;
+    }
+
+    .radio {
+        border: 1px solid $inset-card-border-light;
+    }
+
+    .radio-selected {
+        background-color: $inset-card-border-light;
+    }
+
+    a {
+        all: unset;
+        color: $accent-color-light;
+    }
+}
+
+.dark {
+    background-color: $background-dark;
+    color: $text-color-dark;
+    .root {
+        background-color: $background-dark;
+    }
+    .sidebar {
+        background-color: $sidebar-color-dark;
+        &:hover {
+            .alert {
+                background-color: $alert-dark;
+            }
+            .nav-item {
+                transition-delay: 0.3s;
+                background-color: $outset-card-dark;
+
+                &:hover {
+                    transition: all 0.2s ease-in-out;
+                    background-color: $accent-color-dark;
+                }
+            }
+        }
+    }
+    svg {
+        stroke: $text-color-dark;
+    }
+    .content {
+        background-color: $background-dark;
+        color: $text-color-dark;
+    }
+
+    .inset-card {
+        background-color: $inset-card-background-dark;
+        border: 1px solid $inset-card-border-dark;
+    }
+
+    .card {
+        background-color: $inset-card-background-dark;
+        border: 1px solid $inset-card-border-dark;
+    }
+
+    .outset-card {
+        background-color: $background-dark;
+        border: 1px solid $inset-card-border-dark;
+    }
+
+    input {
+        background-color: $outset-card-dark;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &:focus {
+            background-color: $inset-card-border-dark;
+        }
+    }
+
+    textarea {
+        background-color: $outset-card-dark;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &:focus {
+            background-color: $inset-card-border-dark;
+        }
+    }
+
+    .button {
+        background-color: $accent-color-dark;
+    }
+
+    .button-long {
+        background-color: $accent-color-dark;
+    }
+
+    .radio {
+        border: 1px solid $inset-card-border-dark;
+    }
+
+    .radio-selected {
+        background-color: $inset-card-border-dark;
+    }
+
+    a {
+        all: unset;
+        color: $accent-color-dark;
+    }
+}
+
+.inset-card {
+    max-width: 50vh;
+    max-height: 75vh;
+
+    min-width: 300px;
+    min-height: 400px;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.card {
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.outset-card {
+    border-radius: 6px;
+    margin: 8px;
+}
+
+input {
+    all: unset;
+    width: calc(100% - 16px);
+    height: 100%;
+    padding: 0 8px;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    cursor: pointer;
+    align-content: center;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+textarea {
+    all: unset;
+    width: calc(100% - 16px);
+    padding: 0 8px;
+    height: 100%;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+.button {
+    height: 48px;
+    max-width: 25%;
+    min-width: 80px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+        transform: scale(1.025);
+    }
+}
+
+.button-long {
+    height: 48px;
+    max-width: 128px;
+    min-width: 128px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+        transform: scale(1.025);
+    }
+}
+
+.radio {
+    height: 48px;
+    max-width: 25%;
+    min-width: 96px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+        transform: scale(1.025);
+    }
+}
